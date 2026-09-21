@@ -1,15 +1,18 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Send, CheckCircle2 } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { SectionHeading } from "@/components/ui";
-import { socials, profile } from "@/data/profile";
+import { socials } from "@/data/profile";
 
 const socialIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   github: Github,
   linkedin: Linkedin,
   leetcode: SiLeetcode,
 };
+
+const CONTACT_EMAIL = "akashr.offical7@gmail.com";
+const CONTACT_PHONE = "+91 9739625103";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -68,17 +71,37 @@ export function Contact() {
                   );
                 })}
 
-                <div className="flex items-center gap-3 rounded-xl border border-dashed border-white/15 bg-white/[0.02] px-4 py-3">
-                  <Mail className="h-5 w-5 text-slate-500" />
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 hover:border-cyan-400/30 hover:bg-white/[0.05] transition-colors"
+                >
+                  <Mail className="h-5 w-5 text-slate-400 group-hover:text-cyan-400 transition-colors" />
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-slate-300">
+                    <div className="text-sm font-medium text-white">
                       Email
                     </div>
-                    <div className="text-xs text-slate-500 italic">
-                      Email address to be added
+                    <div className="text-xs text-slate-500 truncate">
+                      {CONTACT_EMAIL}
                     </div>
                   </div>
-                </div>
+                  <Send className="h-3.5 w-3.5 text-slate-600 group-hover:text-cyan-400 transition-colors" />
+                </a>
+
+                <a
+                  href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}
+                  className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 hover:border-cyan-400/30 hover:bg-white/[0.05] transition-colors"
+                >
+                  <Phone className="h-5 w-5 text-slate-400 group-hover:text-cyan-400 transition-colors" />
+                  <div className="flex-1">
+                    <div className="text-sm font-medium text-white">
+                      Phone
+                    </div>
+                    <div className="text-xs text-slate-500 truncate">
+                      {CONTACT_PHONE}
+                    </div>
+                  </div>
+                  <Send className="h-3.5 w-3.5 text-slate-600 group-hover:text-cyan-400 transition-colors" />
+                </a>
               </div>
             </div>
           </motion.div>

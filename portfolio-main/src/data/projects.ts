@@ -95,14 +95,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "mediai",
-    title: "MediAI — AI Pharmacy & Prescription Assistant",
+    id: "mediPharm",
+    title: "MediPharm — AI Pharmacy & Prescription Assistant",
     badge: "In Development",
     category: "AI / Full Stack / OCR",
     filters: ["Full Stack", "Java", "AI"],
     status: "In Development",
     description:
-      "MediAI is an AI-powered pharmacy assistant being developed as an extension of the MediPharm ecosystem. It combines AI chat, prescription OCR and medicine information to help users interact with pharmacy services and understand prescription-related information.",
+      "MediPharm is an AI-powered pharmacy assistant being developed as an extension of the MediPharm ecosystem. It combines AI chat, prescription OCR and medicine information to help users interact with pharmacy services and understand prescription-related information.",
     tech: [
       "Java",
       "Spring Boot",
@@ -145,7 +145,7 @@ export const projects: Project[] = [
     whatILearned:
       "Integrating AI models (Gemini), OCR (Tesseract) and full-stack architecture into a cohesive pharmacy assistant application.",
     disclaimer:
-      "MediAI is a software project for educational and application-development purposes and should not be treated as a medical diagnosis or substitute for professional medical advice.",
+      "MediPharm is a software project for educational and application-development purposes and should not be treated as a medical diagnosis or substitute for professional medical advice.",
   },
   {
     id: "gym-management",

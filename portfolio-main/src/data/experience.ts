@@ -96,7 +96,7 @@ export const hackathon = {
 };
 
 export const leetcode = {
-  stat: "100+",
+  stat: "150+",
   statLabel: "Problems Solved",
   platform: "LeetCode",
   profile: "https://leetcode.com/u/akashr7/",
