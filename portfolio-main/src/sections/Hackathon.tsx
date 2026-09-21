@@ -80,22 +80,24 @@ export function Hackathon() {
                 })}
               </div>
             </div>
-<div className="flex items-center gap-2 rounded-xl border border-dashed border-white/15 bg-white/[0.02] px-4 py-3">
-  <FileBadge className="h-5 w-5 text-slate-500" />
-  <span className="text-sm text-slate-400">
-    {hackathon.certificateLabel}
-  </span>
-</div>
 
-{/* Certificate image, shown separately below the label row */}
-<div className="mt-4 overflow-hidden rounded-xl border border-white/10">
-  <img
-    src={image}
-    alt="Hackathon certificate"
-    className="w-full h-auto object-cover"
-  />
-</div>
-   
+            <div className="flex items-center gap-2 rounded-xl border border-dashed border-white/15 bg-white/[0.02] px-4 py-3">
+              <FileBadge className="h-5 w-5 text-slate-500" />
+              <span className="text-sm text-slate-400">
+                {hackathon.certificateLabel}
+              </span>
+            </div>
+
+            {/* Certificate image */}
+            <div className="mt-6 flex justify-center">
+              <div className="relative w-full max-w-[420px] aspect-[4/3] overflow-hidden rounded-xl border border-white/10 bg-black/20">
+                <img
+                  src={image}
+                  alt="Hackathon participation certificate"
+                  className="absolute top-1/2 left-1/2 h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 rotate-90 object-contain"
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
