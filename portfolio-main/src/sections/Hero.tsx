@@ -11,11 +11,16 @@ import {
   Download,
   Github,
   Linkedin,
+  Mail,
+  Phone,
   Sparkles,
 } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { profile, socials } from "@/data/profile";
 import { heroTechOrbs } from "@/data/skills";
+
+const CONTACT_EMAIL = "akashr.offical7@gmail.com";
+const CONTACT_PHONE = "+91 9739625103";
 
 const iconMap: Record<string, typeof Coffee> = {
   Coffee,
@@ -136,8 +141,22 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65 }}
-              className="flex items-center gap-4 pt-2"
+              className="flex flex-wrap items-center gap-4 pt-2"
             >
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                <Mail className="h-5 w-5" />
+                <span className="hidden sm:inline">{CONTACT_EMAIL}</span>
+              </a>
+              <a
+                href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}
+                className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+                <span className="hidden sm:inline">{CONTACT_PHONE}</span>
+              </a>
               {socials.map((social) => {
                 const Icon = socialIconMap[social.icon];
                 return (

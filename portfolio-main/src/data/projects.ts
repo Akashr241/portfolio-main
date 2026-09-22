@@ -101,6 +101,8 @@ export const projects: Project[] = [
     category: "AI / Full Stack / OCR",
     filters: ["Full Stack", "Java", "AI"],
     status: "In Development",
+    liveDemo: "https://medipharm-eosin.vercel.app/",
+    github:"https://github.com/Akashr241/MediPharm",
     description:
       "MediPharm is an AI-powered pharmacy assistant being developed as an extension of the MediPharm ecosystem. It combines AI chat, prescription OCR and medicine information to help users interact with pharmacy services and understand prescription-related information.",
     tech: [
@@ -155,6 +157,7 @@ export const projects: Project[] = [
     filters: ["Full Stack", "Internship", "Web Applications"],
     status: "Completed",
     liveDemo: "https://akashr241.github.io/Gym-app-using-typescrpit/",
+    github:"https://github.com/Akashr241/Gym-app-using-typescrpit",
     description:
       "Built a digital operations platform for gyms to replace paper-based receipts and manual notices with a role-based member management system.",
     problem:
@@ -189,6 +192,7 @@ export const projects: Project[] = [
     filters: ["Internship", "Web Applications"],
     status: "Completed",
     liveDemo: "https://akashr241.github.io/super-mall/",
+    github:"https://github.com/Akashr241/super-mall",
     description:
       "Designed and developed an e-commerce management portal that enables local shops to manage products and promotional offers while allowing users to browse and compare products across vendors.",
     tech: ["HTML5", "CSS3", "JavaScript", "Firebase Firestore"],

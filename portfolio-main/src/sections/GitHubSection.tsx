@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, GitBranch, Star, Code2 } from "lucide-react";
+import { Github, ExternalLink, Code2 } from "lucide-react";
 import { SectionHeading } from "@/components/ui";
 import { socials } from "@/data/profile";
 import { projects } from "@/data/projects";
 
 const githubUrl = socials.find((s) => s.icon === "github")?.url || "";
 
-const featuredRepos = projects
+const repos = projects
   .filter((p) => p.github)
   .map((p) => ({
     name: p.github!.split("/").pop() || "repository",
@@ -21,8 +21,8 @@ export function GitHubSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           number="07"
-          title="GitHub & Open Source"
-          subtitle="My GitHub contains my full-stack applications, backend development work, frontend projects and continuous learning projects."
+          title="Code & Repositories"
+          subtitle="Every project on this site is public on GitHub — backend services, full-stack applications and learning projects."
         />
 
         <motion.div
@@ -34,7 +34,7 @@ export function GitHubSection() {
         >
           <div className="grid lg:grid-cols-3 gap-6">
             <div className="lg:col-span-1">
-              <div className="rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-6 group hover:border-cyan-400/30 transition-colors h-full">
+              <div className="rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-6 group hover:border-cyan-400/30 transition-colors h-full flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 text-white">
                     <Github className="h-6 w-6" />
@@ -45,37 +45,17 @@ export function GitHubSection() {
                   </div>
                 </div>
 
-                <p className="text-sm text-slate-400 leading-relaxed mb-4">
-                  Full-stack applications, backend development work, frontend
-                  projects and continuous learning.
+                <p className="text-sm text-slate-400 leading-relaxed mb-6">
+                  Source code for my Spring Boot backends, React frontends and
+                  full-stack applications. Commit history shows how each project
+                  was built, not just the finished result.
                 </p>
-
-                <div className="flex flex-col gap-2 mb-6">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-500 flex items-center gap-1.5">
-                      <GitBranch className="h-4 w-4" />
-                      Repositories
-                    </span>
-                    <span className="text-slate-400 text-xs italic">
-                      View on GitHub
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-500 flex items-center gap-1.5">
-                      <Star className="h-4 w-4" />
-                      Stars
-                    </span>
-                    <span className="text-slate-400 text-xs italic">
-                      View on GitHub
-                    </span>
-                  </div>
-                </div>
 
                 <a
                   href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-slate-700 to-slate-800 px-4 py-2.5 text-sm font-semibold text-white hover:from-slate-600 hover:to-slate-700 transition-colors"
+                  className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-slate-700 to-slate-800 px-4 py-2.5 text-sm font-semibold text-white hover:from-slate-600 hover:to-slate-700 transition-colors"
                 >
                   <Github className="h-4 w-4" />
                   Visit GitHub
@@ -86,10 +66,10 @@ export function GitHubSection() {
             <div className="lg:col-span-2">
               <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
                 <Code2 className="h-4 w-4 text-cyan-400" />
-                Featured Repositories
+                Project Repositories
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
-                {featuredRepos.map((repo, i) => (
+                {repos.map((repo, i) => (
                   <motion.a
                     key={repo.url}
                     href={repo.url}
@@ -103,8 +83,8 @@ export function GitHubSection() {
                     className="group rounded-xl border border-white/10 bg-slate-900/40 backdrop-blur-sm p-4 hover:border-cyan-400/30 transition-colors"
                   >
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <div className="flex items-center gap-2">
-                        <Github className="h-4 w-4 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+                      <div className="flex items-center gap-2 min-w-0">
+                        <Github className="h-4 w-4 text-slate-500 group-hover:text-cyan-400 transition-colors flex-shrink-0" />
                         <span className="text-sm font-semibold text-white truncate">
                           {repo.name}
                         </span>
@@ -126,12 +106,6 @@ export function GitHubSection() {
                     </div>
                   </motion.a>
                 ))}
-              </div>
-
-              <div className="mt-4 rounded-xl border border-dashed border-white/10 bg-white/[0.02] p-4 text-center">
-                <p className="text-xs text-slate-500">
-                  Contribution graph loads dynamically from GitHub when connected
-                </p>
               </div>
             </div>
           </div>

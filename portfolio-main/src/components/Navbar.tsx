@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Github, Linkedin } from "lucide-react";
+import { Menu, X, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { navLinks, socials } from "@/data/profile";
+
+const CONTACT_EMAIL = "akashr.offical7@gmail.com";
+const CONTACT_PHONE = "+91 9739625103";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -82,6 +85,22 @@ export function Navbar() {
             </div>
 
             <div className="hidden lg:flex items-center gap-3">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                aria-label="Email"
+                title={CONTACT_EMAIL}
+                className="text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+              <a
+                href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}
+                aria-label="Phone"
+                title={CONTACT_PHONE}
+                className="text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+              </a>
               {socials.map((social) => (
                 <a
                   key={social.label}
@@ -140,7 +159,25 @@ export function Navbar() {
                   {link.label}
                 </button>
               ))}
-              <div className="flex items-center gap-4 px-4 pt-6 mt-auto border-t border-white/10">
+
+              <div className="flex flex-col gap-2 px-4 pt-6 mt-auto border-t border-white/10 text-sm">
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors"
+                >
+                  <Mail className="h-4 w-4" />
+                  {CONTACT_EMAIL}
+                </a>
+                <a
+                  href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}
+                  className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  {CONTACT_PHONE}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-4 px-4 pt-4">
                 {socials.map((social) => (
                   <a
                     key={social.label}
