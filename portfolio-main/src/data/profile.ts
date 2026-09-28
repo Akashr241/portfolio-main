@@ -64,7 +64,7 @@ export const quickHighlights = [
     icon: "Briefcase",
   },
   {
-    title: "100+",
+    title: "150+",
     subtitle: "LeetCode Problems Solved",
     icon: "Code2",
   },

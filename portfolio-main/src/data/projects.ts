@@ -97,7 +97,7 @@ export const projects: Project[] = [
   {
     id: "mediPharm",
     title: "MediPharm — AI Pharmacy & Prescription Assistant",
-    badge: "In Development",
+    badge: "Featured Project",
     category: "AI / Full Stack / OCR",
     filters: ["Full Stack", "Java", "AI"],
     status: "Completed",
