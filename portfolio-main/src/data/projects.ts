@@ -100,7 +100,7 @@ export const projects: Project[] = [
     badge: "In Development",
     category: "AI / Full Stack / OCR",
     filters: ["Full Stack", "Java", "AI"],
-    status: "In Development",
+    status: "Completed",
     liveDemo: "https://medipharm-eosin.vercel.app/",
     github:"https://github.com/Akashr241/MediPharm",
     description:
