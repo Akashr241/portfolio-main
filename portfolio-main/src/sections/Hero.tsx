@@ -18,6 +18,7 @@ import {
 import { SiLeetcode } from "react-icons/si";
 import { profile, socials } from "@/data/profile";
 import { heroTechOrbs } from "@/data/skills";
+import { downloadResume } from "@/lib/resumePdf";
 
 const CONTACT_EMAIL = "akashr.offical7@gmail.com";
 const CONTACT_PHONE = "+91 9739625103";
@@ -127,14 +128,14 @@ export function Hero() {
                 View Projects
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
-              <a
-                href={profile.resumeUrl}
-                download
+              <button
+                type="button"
+                onClick={downloadResume}
                 className="group inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-slate-200 hover:border-cyan-400/40 hover:text-cyan-300 transition-all hover:scale-[1.02]"
               >
                 <Download className="h-4 w-4" />
                 Download Resume
-              </a>
+              </button>
             </motion.div>
 
             <motion.div

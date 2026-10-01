@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Download, Github, Linkedin, ArrowRight } from "lucide-react";
-import { profile, socials } from "@/data/profile";
+import { socials } from "@/data/profile";
+import { downloadResume } from "@/lib/resumePdf";
 
 const socialIconMap: Record<string, typeof Github> = {
   github: Github,
@@ -42,15 +43,15 @@ export function ResumeCTA() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mt-8">
-              <a
-                href={profile.resumeUrl}
-                download
+              <button
+                type="button"
+                onClick={downloadResume}
                 className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 hover:shadow-cyan-400/30 transition-all hover:scale-[1.02]"
               >
                 <Download className="h-4 w-4" />
                 Download Resume
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </button>
 
               {socials
                 .filter((s) => socialIconMap[s.icon])
@@ -71,10 +72,6 @@ export function ResumeCTA() {
                 })}
             </div>
 
-            <p className="text-xs text-slate-600 mt-6">
-              Resume file: {profile.resumeUrl}{" "}
-              <span className="italic">— replace with your latest PDF</span>
-            </p>
           </div>
         </motion.div>
       </div>

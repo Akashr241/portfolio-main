@@ -31,7 +31,6 @@ I have also built and deployed a full-stack pharmacy e-commerce platform with JW
 Currently, I am developing MediAI, an AI-powered pharmacy and prescription assistant combining Spring Boot, React, Gemini AI and OCR.
 
 I also actively practice Data Structures and Algorithms using Java and have solved 100+ problems on LeetCode.`,
-  resumeUrl: "/resume/Akash-R-Resume.pdf",
 };
 
 export const navLinks: NavLink[] = [
