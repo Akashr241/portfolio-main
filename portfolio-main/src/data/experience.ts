@@ -29,7 +29,7 @@ export interface Achievement {
 
 export const achievements: Achievement[] = [
   {
-    title: "100+ LeetCode Problems Solved",
+    title: "150+ LeetCode Problems Solved",
     description:
       "Consistently practice Data Structures and Algorithms using Java to strengthen problem-solving and interview readiness.",
     icon: "Code2",

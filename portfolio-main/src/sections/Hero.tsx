@@ -20,7 +20,7 @@ import { profile, socials } from "@/data/profile";
 import { heroTechOrbs } from "@/data/skills";
 import { downloadResume } from "@/lib/resumePdf";
 
-const CONTACT_EMAIL = "akashr.offical7@gmail.com";
+const CONTACT_EMAIL = "akashr.official7@gmail.com";
 const CONTACT_PHONE = "+91 9739625103";
 
 const iconMap: Record<string, typeof Coffee> = {

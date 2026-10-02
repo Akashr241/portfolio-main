@@ -4,7 +4,7 @@ import { Menu, X, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { navLinks, socials } from "@/data/profile";
 
-const CONTACT_EMAIL = "akashr.offical7@gmail.com";
+const CONTACT_EMAIL = "akashr.official7@gmail.com";
 const CONTACT_PHONE = "+91 9739625103";
 
 export function Navbar() {

@@ -11,7 +11,7 @@ const socialIconMap: Record<string, React.ComponentType<{ className?: string }>>
   leetcode: SiLeetcode,
 };
 
-const CONTACT_EMAIL = "akashr.offical7@gmail.com";
+const CONTACT_EMAIL = "akashr.official7@gmail.com";
 const CONTACT_PHONE = "+91 9739625103";
 
 export function Contact() {
