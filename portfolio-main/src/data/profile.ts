@@ -17,6 +17,8 @@ export const profile = {
     "Java | Spring Boot | React | PostgreSQL | REST APIs | AI",
   objective:
     "Seeking Java Backend / Full Stack Developer internship and entry-level opportunities.",
+  email: "akashr.official7@gmail.com",
+  availability: "Open to Java Backend / Full Stack internships",
   heroDescription:
     "I build secure, scalable and intelligent web applications using Java, Spring Boot, React, PostgreSQL and modern development technologies.",
   heroTechLine: ["Java", "Spring Boot", "React", "PostgreSQL", "REST APIs", "AI"],

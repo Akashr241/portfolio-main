@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   Coffee,
   Leaf,
@@ -12,14 +12,12 @@ import {
   Linkedin,
   Mail,
   Phone,
-  Sparkles,
 } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { ResumeDownloadButton } from "@/components/ResumeDownloadButton";
 import { profile, socials } from "@/data/profile";
 import { heroTechOrbs } from "@/data/skills";
 
-const CONTACT_EMAIL = "akashr.official7@gmail.com";
 const CONTACT_PHONE = "+91 9739625103";
 
 const iconMap: Record<string, typeof Coffee> = {
@@ -43,6 +41,8 @@ const scrollTo = (href: string) => {
 };
 
 export function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       id="home"
@@ -62,8 +62,11 @@ export function Hero() {
               transition={{ delay: 0.1 }}
               className="inline-flex items-center gap-2 self-start rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-1.5 text-xs sm:text-sm font-medium text-cyan-300"
             >
-              <Sparkles className="h-3.5 w-3.5" />
-              Open to Java Full Stack Opportunities
+              <span
+                aria-hidden="true"
+                className="h-2 w-2 rounded-full bg-emerald-400 motion-safe:animate-pulse"
+              />
+              {profile.availability}
             </motion.span>
 
             <div className="flex flex-col gap-2">
@@ -127,8 +130,36 @@ export function Hero() {
                 View Projects
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
-              <ResumeDownloadButton />
             </motion.div>
+
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
+              <ResumeDownloadButton
+                variant="primary"
+                className="[&>button]:px-3 [&>button]:py-2 [&>button]:text-xs"
+              />
+              {socials.map((social) => {
+                const Icon = socialIconMap[social.icon];
+                return (
+                  <a
+                    key={social.label}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-slate-400 transition-colors hover:text-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+                  >
+                    {Icon && <Icon aria-hidden="true" className="h-4 w-4" />}
+                    {social.label}
+                  </a>
+                );
+              })}
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex items-center gap-1.5 text-slate-400 transition-colors hover:text-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              >
+                <Mail aria-hidden="true" className="h-4 w-4" />
+                Email me
+              </a>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -137,14 +168,16 @@ export function Hero() {
               className="flex flex-wrap items-center gap-4 pt-2"
             >
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href={`mailto:${profile.email}`}
+                aria-label={`Email ${profile.email}`}
                 className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
               >
                 <Mail className="h-5 w-5" />
-                <span className="hidden sm:inline">{CONTACT_EMAIL}</span>
+                <span className="hidden sm:inline">{profile.email}</span>
               </a>
               <a
                 href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}
+                aria-label={`Call ${CONTACT_PHONE}`}
                 className="flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
               >
                 <Phone className="h-5 w-5" />
@@ -178,12 +211,20 @@ export function Hero() {
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                transition={{
+                  duration: 60,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  ease: "linear",
+                }}
                 className="absolute h-[280px] w-[280px] sm:h-[340px] sm:w-[340px] lg:h-[400px] lg:w-[400px] rounded-full border border-white/[0.06]"
               />
               <motion.div
                 animate={{ rotate: -360 }}
-                transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+                transition={{
+                  duration: 80,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  ease: "linear",
+                }}
                 className="absolute h-[200px] w-[200px] sm:h-[260px] sm:w-[260px] lg:h-[300px] lg:w-[300px] rounded-full border border-white/[0.08]"
               />
               <motion.div
@@ -191,7 +232,11 @@ export function Hero() {
                   scale: [1, 1.08, 1],
                   opacity: [0.4, 0.7, 0.4],
                 }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: shouldReduceMotion ? 0 : Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute h-[120px] w-[120px] lg:h-[160px] lg:w-[160px] rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/20 blur-2xl"
               />
             </div>
@@ -222,7 +267,7 @@ export function Hero() {
                   }}
                   transition={{
                     duration: 3 + i * 0.4,
-                    repeat: Infinity,
+                    repeat: shouldReduceMotion ? 0 : Infinity,
                     ease: "easeInOut",
                     delay: i * 0.2,
                   }}
@@ -270,7 +315,11 @@ export function Hero() {
 
       <motion.div
         animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        transition={{
+          duration: 2,
+          repeat: shouldReduceMotion ? 0 : Infinity,
+          ease: "easeInOut",
+        }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-1 text-slate-500"
       >
         <span className="text-xs">Scroll</span>

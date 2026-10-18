@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
-import { navLinks, socials } from "@/data/profile";
+import { navLinks, profile, socials } from "@/data/profile";
 
-const CONTACT_EMAIL = "akashr.official7@gmail.com";
 const CONTACT_PHONE = "+91 9739625103";
 
 export function Navbar() {
@@ -86,9 +85,9 @@ export function Navbar() {
 
             <div className="hidden lg:flex items-center gap-3">
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href={`mailto:${profile.email}`}
                 aria-label="Email"
-                title={CONTACT_EMAIL}
+                title={profile.email}
                 className="text-slate-400 hover:text-cyan-400 transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -162,11 +161,11 @@ export function Navbar() {
 
               <div className="flex flex-col gap-2 px-4 pt-6 mt-auto border-t border-white/10 text-sm">
                 <a
-                  href={`mailto:${CONTACT_EMAIL}`}
+                  href={`mailto:${profile.email}`}
                   className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  {CONTACT_EMAIL}
+                  {profile.email}
                 </a>
                 <a
                   href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}

@@ -1,10 +1,12 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { SectionHeading } from "@/components/ui";
 import { leetcode } from "@/data/experience";
 
 export function ProblemSolving() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section id="problem-solving" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -26,7 +28,11 @@ export function ProblemSolving() {
 
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 4,
+                repeat: shouldReduceMotion ? 0 : Infinity,
+                ease: "easeInOut",
+              }}
               className="relative inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 text-yellow-400 mb-6"
             >
               <SiLeetcode className="h-8 w-8" />

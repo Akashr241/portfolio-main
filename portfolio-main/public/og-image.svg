@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Akash R Portfolio</title>
+  <desc id="description">Akash R, Java Backend and Full Stack Developer. Spring Boot, React, PostgreSQL.</desc>
+  <defs>
+    <linearGradient id="accent" x1="240" y1="150" x2="720" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(500 360 -300 416 940 70)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#164e63" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path fill="#020617" d="M0 0h1200v630H0z"/>
+  <path fill="url(#glow)" d="M0 0h1200v630H0z"/>
+  <rect x="104" y="148" width="184" height="184" rx="42" fill="#0f172a" stroke="#22d3ee" stroke-opacity=".35" stroke-width="2"/>
+  <text x="196" y="265" fill="url(#accent)" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="700" text-anchor="middle">AR</text>
+  <text x="330" y="226" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700">Akash R</text>
+  <text x="334" y="300" fill="#67e8f9" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="600">Java Backend &amp; Full Stack Developer</text>
+  <path d="M334 343h610" stroke="#334155" stroke-width="2"/>
+  <text x="334" y="402" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="27">Spring Boot  |  React  |  PostgreSQL</text>
+  <text x="334" y="526" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="20">DEVELOPER PORTFOLIO</text>
+</svg>

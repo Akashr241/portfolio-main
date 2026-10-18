@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Download } from "lucide-react";
 import { resumes } from "@/data/profile";
 
@@ -12,6 +12,7 @@ export function ResumeDownloadButton({
   className = "",
 }: ResumeDownloadButtonProps) {
   const [open, setOpen] = useState(false);
+  const menuId = useId();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -48,9 +49,8 @@ export function ResumeDownloadButton({
     <div className={`relative inline-block ${className}`} ref={containerRef}>
       <button
         type="button"
-        aria-haspopup="menu"
         aria-expanded={open}
-        aria-label="Download resume options"
+        aria-controls={open ? menuId : undefined}
         onClick={() => setOpen((current) => !current)}
         className={baseClasses}
       >
@@ -63,8 +63,7 @@ export function ResumeDownloadButton({
 
       {open && (
         <div
-          role="menu"
-          aria-label="Resume download options"
+          id={menuId}
           className="absolute left-0 z-20 mt-2 w-64 rounded-xl border border-white/10 bg-slate-950/95 p-2 shadow-2xl shadow-slate-950/40 backdrop-blur-xl"
         >
           {resumes.map((resume) => (
@@ -72,8 +71,7 @@ export function ResumeDownloadButton({
               key={resume.label}
               href={resume.file}
               download
-              role="menuitem"
-              className="block rounded-lg px-3 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-white/5 hover:text-cyan-300"
+              className="block rounded-lg px-3 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-white/5 hover:text-cyan-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               onClick={() => setOpen(false)}
             >
               {resume.label}

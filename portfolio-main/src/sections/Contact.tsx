@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Phone, Send, CheckCircle2 } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { SectionHeading } from "@/components/ui";
-import { socials } from "@/data/profile";
+import { profile, socials } from "@/data/profile";
 
 const socialIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   github: Github,
@@ -11,7 +11,6 @@ const socialIconMap: Record<string, React.ComponentType<{ className?: string }>>
   leetcode: SiLeetcode,
 };
 
-const CONTACT_EMAIL = "akashr.official7@gmail.com";
 const CONTACT_PHONE = "+91 9739625103";
 
 export function Contact() {
@@ -72,7 +71,7 @@ export function Contact() {
                 })}
 
                 <a
-                  href={`mailto:${CONTACT_EMAIL}`}
+                  href={`mailto:${profile.email}`}
                   className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 hover:border-cyan-400/30 hover:bg-white/[0.05] transition-colors"
                 >
                   <Mail className="h-5 w-5 text-slate-400 group-hover:text-cyan-400 transition-colors" />
@@ -81,7 +80,7 @@ export function Contact() {
                       Email
                     </div>
                     <div className="text-xs text-slate-500 truncate">
-                      {CONTACT_EMAIL}
+                      {profile.email}
                     </div>
                   </div>
                   <Send className="h-3.5 w-3.5 text-slate-600 group-hover:text-cyan-400 transition-colors" />

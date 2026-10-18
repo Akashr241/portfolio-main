@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { GridBackground } from "@/components/GridBackground";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { Navbar } from "@/components/Navbar";
@@ -9,13 +10,37 @@ import { Experience } from "@/sections/Experience";
 import { Skills } from "@/sections/Skills";
 import { Projects } from "@/sections/Projects";
 import { Achievements } from "@/sections/Achievements";
-import { ProblemSolving } from "@/sections/ProblemSolving";
-import { Hackathon } from "@/sections/Hackathon";
 import { Education } from "@/sections/Education";
-import { GitHubSection } from "@/sections/GitHubSection";
 import { ResumeCTA } from "@/sections/ResumeCTA";
 import { Contact } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
+
+const ProblemSolving = lazy(() =>
+  import("@/sections/ProblemSolving").then((module) => ({
+    default: module.ProblemSolving,
+  })),
+);
+const Hackathon = lazy(() =>
+  import("@/sections/Hackathon").then((module) => ({
+    default: module.Hackathon,
+  })),
+);
+const GitHubSection = lazy(() =>
+  import("@/sections/GitHubSection").then((module) => ({
+    default: module.GitHubSection,
+  })),
+);
+
+function SectionFallback() {
+  return (
+    <div
+      role="status"
+      className="py-20 text-center text-sm text-slate-500"
+    >
+      Loading section…
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -33,10 +58,16 @@ function App() {
         <Skills />
         <Projects />
         <Achievements />
-        <ProblemSolving />
-        <Hackathon />
+        <Suspense fallback={<SectionFallback />}>
+          <ProblemSolving />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <Hackathon />
+        </Suspense>
         <Education />
-        <GitHubSection />
+        <Suspense fallback={<SectionFallback />}>
+          <GitHubSection />
+        </Suspense>
         <ResumeCTA />
         <Contact />
       </main>
