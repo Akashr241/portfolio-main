@@ -8,16 +8,35 @@ export interface ExperienceItem {
   internshipProjects?: string[];
 }
 
+export interface CertificationItem {
+  title: string;
+  issuer: string;
+  url?: string;
+}
+
 export const experience: ExperienceItem[] = [
   {
     role: "Full Stack Developer Intern",
-    company: "Unified Mentor",
-    duration: "3 Months",
+    company: "Unified Mentor Pvt. Ltd.",
+    duration: "Aug 2025 to Nov 2025 (3 months)",
     certificateUrl: "https://unifiedmentor.com/verify-certificate/UMID21082555860",
     certificateLabel: "Verify Internship Certificate",
     description:
-      "Completed a 3-month Full Stack Developer internship at Unified Mentor, gaining practical experience in designing and developing web applications across frontend, backend, database integration and application workflows.",
+      "Built the frontend of an internship project with HTML5, CSS3 and JavaScript, created responsive layouts and interactive features, debugged UI issues across screen sizes and browsers, and used Git and GitHub for version control and collaboration.",
     internshipProjects: ["GYM Management System", "Super Mall Management System"],
+  },
+];
+
+export const certifications: CertificationItem[] = [
+  {
+    title: "AWS Educate: Getting Started with Serverless",
+    issuer: "Amazon Web Services",
+    url: "https://www.credly.com/badges/abd548b4-d13b-4ddd-bbf8-97240c80cb22/public_url",
+  },
+  {
+    title: "Full Stack Web Development Internship Certificate",
+    issuer: "Unified Mentor Pvt. Ltd.",
+    url: "https://unifiedmentor.com/verify-certificate/UMID21082555860",
   },
 ];
 
@@ -55,13 +74,13 @@ export const achievements: Achievement[] = [
   {
     title: "Full Stack E-Commerce Application",
     description:
-      "Built and deployed MediPharm with JWT authentication, role-based authorization and Razorpay payment integration.",
+      "Built and deployed a full stack e-commerce application with JWT authentication, role-based authorization and Razorpay payment integration.",
     icon: "ShoppingCart",
   },
   {
     title: "AI Application Development",
     description:
-      "Developing MediAI, an AI-powered pharmacy assistant integrating Gemini AI, OCR and prescription analysis.",
+      "Built MediPharm, an AI-assisted pharmacy platform integrating Gemini AI, OCR and prescription analysis.",
     icon: "BrainCircuit",
   },
 ];
@@ -70,20 +89,22 @@ export interface EducationItem {
   degree: string;
   cgpa: string;
   institution: string;
+  expected?: string;
 }
 
 export const education: EducationItem[] = [
   {
     degree: "Bachelor of Computer Applications (BCA)",
     cgpa: "7.8",
-    institution: "College / University name to be added",
+    institution: "Krupanidhi College of Commerce & Management",
+    expected: "2027",
   },
 ];
 
 export const hackathon = {
-  title: "Cybersecurity Hackathon Participant",
+  title: "DECIPHER-X 2026 Hackathon (Security Track)",
   description:
-    "Participated in a cybersecurity-focused hackathon, gaining practical exposure to cybersecurity challenges, CTF-style problem solving, forensic analysis and technical collaboration.",
+    "Participated in DECIPHER-X 2026, a national-level 24-hour hackathon organized by St. Francis College, Bengaluru, in the Security Track.",
   skills: [
     "Cybersecurity",
     "Problem Solving",
@@ -111,10 +132,10 @@ export const portfolioJourney = [
   { label: "GYM Management System", icon: "Dumbbell" },
   { label: "Super Mall Management System", icon: "ShoppingBag" },
   { label: "Java + Spring Boot Development", icon: "Server" },
-  { label: "MediPharm Full Stack E-Commerce", icon: "ShoppingCart" },
+  { label: "Full Stack E-Commerce Application", icon: "ShoppingCart" },
   { label: "JWT + Security + Payments", icon: "Lock" },
   { label: "Cloud Deployment", icon: "Cloud" },
-  { label: "MediAI AI + OCR Development", icon: "BrainCircuit" },
-  { label: "100+ LeetCode Problems", icon: "Code2" },
-  { label: "Cybersecurity Hackathon Participation", icon: "ShieldCheck" },
+  { label: "MediPharm AI + OCR Platform", icon: "BrainCircuit" },
+  { label: "150+ LeetCode Problems", icon: "Code2" },
+  { label: "DECIPHER-X 2026 Hackathon (Security Track)", icon: "ShieldCheck" },
 ];

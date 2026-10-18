@@ -32,7 +32,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "E-commerce",
-    title: "Full Stack E-Commerce Platform",
+    title: "Full Stack E-Commerce Application",
     badge: "Featured Project",
     category: "Full Stack / E-Commerce / Payments",
     filters: ["Full Stack", "Java", "Web Applications"],
@@ -40,11 +40,11 @@ export const projects: Project[] = [
     liveDemo: "https://e-commerce-zeta-sepia-33.vercel.app/",
     github: "https://github.com/Akashr241/E-commerce",
     description:
-      "Built and deployed a full-stack pharmacy e-commerce platform using Spring Boot and React, implementing authentication, authorization, product management, shopping cart, checkout, order management and online payment workflows.",
+      "Built and deployed a full-stack e-commerce application using Java, Spring Boot, React and PostgreSQL for product, cart, checkout, order and payment workflows.",
     problem:
-      "Pharmacies need a complete online platform for managing products, processing orders and accepting secure online payments.",
+      "Businesses need a reliable online storefront for managing product listings, shopping carts, checkout flows and secure payments.",
     solution:
-      "A full-stack e-commerce system with Spring Boot REST APIs, Spring Security JWT authentication, role-based authorization, product management, cart and order workflows, and Razorpay payment integration.",
+      "A complete full-stack e-commerce platform with REST APIs in Java and Spring Boot, JWT authentication, role-based access control, PostgreSQL persistence, Razorpay payments, and a responsive React frontend built with Axios.",
     tech: [
       "Java",
       "Spring Boot",
@@ -62,6 +62,7 @@ export const projects: Project[] = [
       "Swagger",
     ],
     features: [
+      "5 core modules: Product, Cart, Checkout, Order, Payment",
       "JWT authentication",
       "Role-based authorization",
       "Admin and User workflows",
@@ -96,7 +97,7 @@ export const projects: Project[] = [
   },
   {
     id: "mediPharm",
-    title: "MediPharm — AI Pharmacy & Prescription Assistant",
+    title: "MediPharm: AI-Assisted Pharmacy Platform",
     badge: "Featured Project",
     category: "AI / Full Stack / OCR",
     filters: ["Full Stack", "Java", "AI"],
@@ -104,19 +105,23 @@ export const projects: Project[] = [
     liveDemo: "https://medipharm-eosin.vercel.app/",
     github:"https://github.com/Akashr241/MediPharm",
     description:
-      "MediPharm is an AI-powered pharmacy assistant being developed as an extension of the MediPharm ecosystem. It combines AI chat, prescription OCR and medicine information to help users interact with pharmacy services and understand prescription-related information.",
+      "MediPharm extends the e-commerce platform into an AI-assisted pharmacy system with prescription upload, OCR, medicine-name normalization and fuzzy search over a large Indian medicine dataset.",
     tech: [
       "Java",
       "Spring Boot",
       "React",
       "Google Gemini",
       "Tesseract OCR",
+      "pg_trgm",
       "REST APIs",
       "PostgreSQL",
     ],
     features: [
       "AI Pharmacy Chatbot",
       "Prescription Image Upload",
+      "Image authenticity check (EXIF + pixel analysis)",
+      "Fuzzy medicine search over 250k+ records (pg_trgm)",
+      "AI-generated prescription image detection (EXIF and pixel analysis)",
       "Prescription OCR",
       "Image Processing",
       "Prescription Text Extraction",
@@ -133,7 +138,7 @@ export const projects: Project[] = [
     ],
     workflow: [
       "Prescription Image",
-      "Image Processing",
+      "Image authenticity check (EXIF + pixel analysis)",
       "Tesseract OCR",
       "Extracted Text",
       "Prescription Analysis",
@@ -145,7 +150,7 @@ export const projects: Project[] = [
     challenges:
       "Improving OCR accuracy, prescription text extraction and medicine identification for real-world handwritten prescriptions.",
     whatILearned:
-      "Integrating AI models (Gemini), OCR (Tesseract) and full-stack architecture into a cohesive pharmacy assistant application.",
+      "Integrating AI models (Gemini), OCR (Tesseract), fuzzy search and full-stack architecture into a cohesive pharmacy platform.",
     disclaimer:
       "MediPharm is a software project for educational and application-development purposes and should not be treated as a medical diagnosis or substitute for professional medical advice.",
   },

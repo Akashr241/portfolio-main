@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Award } from "lucide-react";
+import { GraduationCap, Award, ExternalLink } from "lucide-react";
 import { SectionHeading } from "@/components/ui";
-import { education } from "@/data/experience";
+import { certifications, education } from "@/data/experience";
 
 export function Education() {
   return (
@@ -35,14 +35,43 @@ export function Education() {
                   <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5">
                     <Award className="h-4 w-4 text-cyan-400" />
                     <span className="text-sm text-slate-300">
-                      CGPA:{" "}
-                      <span className="font-bold text-white">{edu.cgpa}</span>
+                      CGPA: <span className="font-bold text-white">{edu.cgpa}</span>
+                      {edu.expected ? (
+                        <span className="ml-2 text-cyan-300">
+                          • Expected {edu.expected}
+                        </span>
+                      ) : null}
                     </span>
                   </div>
                 </div>
               </div>
             </motion.div>
           ))}
+
+          {certifications.length > 0 && (
+            <div className="mt-8 max-w-3xl mx-auto rounded-2xl border border-white/10 bg-slate-900/50 backdrop-blur-xl p-6 sm:p-8">
+              <h3 className="text-sm font-semibold text-cyan-400 uppercase tracking-wider mb-4">
+                Certifications
+              </h3>
+              <div className="space-y-3">
+                {certifications.map((cert) => (
+                  <a
+                    key={cert.title}
+                    href={cert.url ?? "#"}
+                    target={cert.url ? "_blank" : undefined}
+                    rel={cert.url ? "noopener noreferrer" : undefined}
+                    className="flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-left transition-colors hover:border-cyan-400/30 hover:text-cyan-300"
+                  >
+                    <div>
+                      <div className="text-sm font-semibold text-white">{cert.title}</div>
+                      <div className="text-xs text-slate-400">{cert.issuer}</div>
+                    </div>
+                    {cert.url && <ExternalLink className="h-4 w-4 text-slate-400" />}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

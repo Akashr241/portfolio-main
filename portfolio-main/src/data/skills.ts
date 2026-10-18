@@ -20,8 +20,21 @@ export const skillCategories: SkillCategory[] = [
       "JWT",
       "Hibernate",
       "JPA",
+      "REST API Design",
       "REST APIs",
       "Maven",
+    ],
+  },
+  {
+    title: "Core Concepts",
+    icon: "Code2",
+    skills: [
+      "OOP",
+      "Data Structures & Algorithms",
+      "Collections Framework",
+      "Exception Handling",
+      "Multithreading",
+      "Design Patterns",
     ],
   },
   {
@@ -32,7 +45,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Database",
     icon: "Database",
-    skills: ["PostgreSQL", "MySQL", "Firebase Firestore"],
+    skills: ["PostgreSQL", "MySQL", "JDBC", "pg_trgm (fuzzy search)", "Firebase Firestore"],
   },
   {
     title: "AI",
@@ -47,7 +60,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "DevOps / Deployment",
     icon: "Cloud",
-    skills: ["Docker", "Kubernetes", "Render", "Vercel", "GitHub Pages"],
+    skills: ["Docker", "AWS (Lambda, API Gateway, SQS, SNS fundamentals)", "Render", "Vercel", "GitHub Pages"],
   },
   {
     title: "Tools",

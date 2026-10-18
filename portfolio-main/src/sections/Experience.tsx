@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Briefcase, ExternalLink, Calendar, FolderGit2 } from "lucide-react";
-import { SectionHeading, TechBadge } from "@/components/ui";
+import { SectionHeading } from "@/components/ui";
 import { experience } from "@/data/experience";
 
 export function Experience() {

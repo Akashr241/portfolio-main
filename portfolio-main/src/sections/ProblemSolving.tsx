@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { SiLeetcode } from "react-icons/si";
 import { SectionHeading } from "@/components/ui";
 import { leetcode } from "@/data/experience";
